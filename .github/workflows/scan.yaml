@@ -5,7 +5,8 @@ on:
     - cron: '0 8 * * *' # every day at 8AM
 
 jobs:
-  - Linux:
+  - build_linux_64:
+    if: github.event_name == 'schedule' && github.repository == 'nerohmot/anaconda'
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
