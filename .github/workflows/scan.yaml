@@ -1,0 +1,13 @@
+name: scan
+
+on:
+  schedule:
+    - cron: '0 8 * * *' # every day at 8AM
+
+jobs:
+  - Linux:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - run: echo Hello world
